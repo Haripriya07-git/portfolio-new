@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Priya - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffffff, #e6f7ff);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorative Icons */
+        .decor-icon {
+            position: absolute;
+            font-size: 100px;
+            color: rgba(0, 123, 255, 0.6);
+            opacity: 0.9;
+            z-index: 2;
+        }
+
+        .icon-laptop { top: 90px; right: 50px; }
+        .icon-graph { bottom: 20%; right: 10%; }
+        .icon-code { top: 75%; left: 15%; }
+
+        /* Menu and Hire Me Buttons */
+        .menu, .hire-me {
+            position: absolute;
+            top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #4A90E2;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease-in-out, color 0.3s;
+            z-index: 9999;
+        }
+
+        .menu {
+            left: 20px; /* Align to top-left */
+        }
+
+        .hire-me {
+            right: 20px; /* Align to top-right */
+        }
+
+        .menu i, .hire-me i {
+            font-size: 30px;
+            margin-right: 8px;
+            color: #4A90E2;
+        }
+
+        .menu:hover, .hire-me:hover {
+            transform: scale(1.1);
+            color: #007BFF;
+        }
+
+        /* Main Content Layout */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 10%;
+            position: relative;
+            z-index: 3;
+        }
+
+        .text-box {
+            flex: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .text-box h1 {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .separator {
+            width: 100px;
+            height: 5px;
+            background: #007BFF;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .text-box p {
+            font-size: 40px;
+            font-weight: 600;
+            color: #007BFF;
+            display: inline;
+        }
+
+        .dynamic-text {
+            font-size: 40px;
+            font-weight: bold;
+            color: #007BFF;
+            display: inline;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Floating Image Effect */
+        .image-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-box img {
+            width: 500px;
+            height: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-box img {
+                width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Decorative Icons -->
+    <i class='bx bx-laptop decor-icon icon-laptop'></i>
+    <i class='bx bx-code-alt decor-icon icon-code'></i>
+    <i class='bx bx-bar-chart-alt-2 decor-icon icon-graph'></i>
+
+    <!-- Menu Button -->
+    <div class="menu" id="menuToggle">
+        <i class='bx bx-grid-alt'></i> MENU
+    </div>
+
+    <!-- Hire Me Button -->
+    <div class="hire-me" id="hireMe">
+        <i class='bx bx-envelope'></i> HIRE ME
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="text-box">
+            <h1>Hi, my name is Hari Priya.</h1>
+            <div class="separator"></div>
+            <p>I'm a <span class="dynamic-text"><span>Web Developer</span></span></p>
+        </div>
+        <div class="image-box">
+            <img src="image.png" alt="Animated Girl Image">
+        </div>
+    </div>
+
+    <script>
+        // Dynamic Role Changing Effect
+        const roles = ["Web Developer", "Data Analyst", "Software Engineer"];
+        let index = 0;
+        function changeText() {
+            document.querySelector(".dynamic-text span").textContent = roles[index];
+            index = (index + 1) % roles.length;
+        }
+        setInterval(changeText, 2000);
+
+        // Navigation Links
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            console.log("Menu button clicked!"); // Debugging
+            window.location.href = "menu.html";
+        });
+
+        document.getElementById("hireMe").addEventListener("click", function() {
+            console.log("Hire Me button clicked!"); // Debugging
+            window.location.href = "mailto:harivijaya1707@gmail.com";
+        });
+    </script>
+
+</body>
+</html>
