@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Hari Priya</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffffff, #e6f7ff);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating Circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 123, 255, 0.3);
+            animation: floatAnimation 6s infinite alternate ease-in-out;
+        }
+
+        .circle1 { width: 120px; height: 120px; top: 10%; left: 10%; animation-delay: 0s; }
+        .circle2 { width: 90px; height: 90px; top: 70%; left: 20%; animation-delay: 1s; }
+        .circle3 { width: 150px; height: 150px; top: 50%; right: 10%; animation-delay: 2s; }
+        .circle4 { width: 100px; height: 100px; top: 15%; right: 20%; animation-delay: 3s; }
+        .circle5 { width: 130px; height: 130px; bottom: 10%; left: 50%; animation-delay: 4s; }
+
+        @keyframes floatAnimation {
+            0% { transform: translateY(0); opacity: 0.6; }
+            100% { transform: translateY(30px); opacity: 1; }
+        }
+
+        /* Menu Toggle */
+        .menu-toggle {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #4A90E2;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease-in-out, color 0.3s;
+            z-index: 3;
+        }
+
+        .menu-toggle i {
+            font-size: 50px;
+            margin-right: 15px;
+            color: #4A90E2;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+            color: #007BFF;
+        }
+
+        /* Hire Me Button */
+        .hire-me {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #4A90E2;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease-in-out, color 0.3s;
+            z-index: 3;
+        }
+
+        .hire-me i {
+            font-size: 35px;
+            margin-right: 10px;
+            color: #4A90E2;
+        }
+
+        .hire-me:hover {
+            transform: scale(1.1);
+            color: #007BFF;
+        }
+
+        /* Sections */
+        .sections {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, color 0.3s, box-shadow 0.3s;
+            padding: 15px 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            justify-content: center;
+        }
+
+        .section i {
+            font-size: 40px;
+            margin-right: 15px;
+            color: #4A90E2;
+        }
+
+        .section:hover {
+            transform: scale(1.1);
+            color: #007BFF;
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            position: absolute;
+            bottom: 30px;
+            display: flex;
+            gap: 25px;
+            z-index: 3;
+        }
+
+        .social-icons a {
+            font-size: 40px;
+            color: #4A90E2;
+            transition: transform 0.2s ease-in-out, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #007BFF;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Floating Circles -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+
+    <!-- Close Button (Redirects to Main Page) -->
+    <div class="menu-toggle" id="menuToggle">
+        <i class='bx bx-x'></i> CLOSE
+    </div>
+
+    <!-- Hire Me Button -->
+    <div class="hire-me" id="hireMe">
+        <i class='bx bx-envelope'></i> HIRE ME
+    </div>
+
+    <!-- Navigation Sections -->
+    <div class="sections">
+        <div class="section" id="aboutMe">
+            <i class='bx bx-user'></i> About Me
+        </div>
+        <div class="section" id="skills">
+            <i class='bx bx-code-alt'></i> Skills
+        </div>
+        <div class="section" id="education">
+            <i class='bx bx-book'></i> Education
+        </div>
+        <div class="section" id="contact">
+            <i class='bx bx-phone'></i> Contact
+        </div>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/?hl=en" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://www.linkedin.com/in/hari-priya-bodduluri-21a790330/"target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/Haripriya07-git/portfolio" target="_blank"><i class='bx bxl-github'></i></a>
+    </div>
+
+    <script>
+        // Navigation Links
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("hireMe").addEventListener("click", function() {
+            window.location.href = "mailto:harivijaya1707@gmail.com";
+        });
+
+        document.getElementById("aboutMe").addEventListener("click", function() {
+            window.location.href = "about.html";
+        });
+
+        document.getElementById("skills").addEventListener("click", function() {
+            window.location.href = "skills.html";
+        });
+
+        document.getElementById("education").addEventListener("click", function() {
+            window.location.href = "education.html";
+        });
+
+        document.getElementById("contact").addEventListener("click", function() {
+            window.location.href = "contact.html";
+        });
+    </script>
+
+</body>
+</html>
